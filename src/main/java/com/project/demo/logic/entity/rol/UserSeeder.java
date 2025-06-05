@@ -11,17 +11,17 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-@Order(1)
-public class AdminSeeder implements ApplicationListener<ContextRefreshedEvent> {
+@Order(2)
+public class UserSeeder implements ApplicationListener<ContextRefreshedEvent> {
     private final RoleRepository roleRepository;
     private final UserRepository userRepository;
 
     private final PasswordEncoder passwordEncoder;
 
 
-    public AdminSeeder(
+    public UserSeeder(
             RoleRepository roleRepository,
-            UserRepository  userRepository,
+            UserRepository userRepository,
             PasswordEncoder passwordEncoder
     ) {
         this.roleRepository = roleRepository;
@@ -36,12 +36,12 @@ public class AdminSeeder implements ApplicationListener<ContextRefreshedEvent> {
 
     private void createSuperAdministrator() {
         User superAdmin = new User();
-        superAdmin.setName("Super");
-        superAdmin.setLastname("Admin");
-        superAdmin.setEmail("super.admin@gmail.com");
-        superAdmin.setPassword("superadmin123");
+        superAdmin.setName("david");
+        superAdmin.setLastname("gutierrez");
+        superAdmin.setEmail("dgutierrezc1@ucenfotec.ac.cr");
+        superAdmin.setPassword("david123");
 
-        Optional<Role> optionalRole = roleRepository.findByName(RoleEnum.SUPER_ADMIN);
+        Optional<Role> optionalRole = roleRepository.findByName(RoleEnum.USER);
         Optional<User> optionalUser = userRepository.findByEmail(superAdmin.getEmail());
 
         if (optionalRole.isEmpty() || optionalUser.isPresent()) {
