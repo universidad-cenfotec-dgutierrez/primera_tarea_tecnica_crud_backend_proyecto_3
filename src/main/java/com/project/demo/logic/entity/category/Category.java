@@ -21,8 +21,6 @@ public class Category {
     @JsonIgnore
     private List<Product> products;
 
-    // Getters and setters
-
     public Long getId() {
         return id;
     }
