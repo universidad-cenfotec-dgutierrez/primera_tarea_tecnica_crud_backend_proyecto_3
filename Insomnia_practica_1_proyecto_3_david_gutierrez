@@ -1,0 +1,335 @@
+type: collection.insomnia.rest/5.0
+name: practica_1_backend_proyecto_3
+meta:
+  id: wrk_ee85317b99b74fcca90fba97ac83c200
+  created: 1749164245406
+  modified: 1749170277249
+  description: ""
+collection:
+  - name: products
+    meta:
+      id: fld_424ab10598c3401f9b98bdb3e746bb01
+      created: 1749167129674
+      modified: 1749167129674
+      sortKey: -1749167129674
+      description: ""
+    children:
+      - url: "{{ _.baseUrl }}products"
+        name: Get all
+        meta:
+          id: req_9f41f56f66f14c35a5eeb05886e62d57
+          created: 1749164245446
+          modified: 1749169591984
+          isPrivate: false
+          description: ""
+          sortKey: -1749168768249
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_a59f0f1d0e5843c5ad3076739c199355
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_5dfb796ec21a46f1ac04b3fa80e37a5a
+          - id: pair_12648338142e47e2b5cf872ca1572843
+            name: Authorization
+            value: "{{ _.token }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseUrl }}products"
+        name: Create product
+        meta:
+          id: req_3d94e163c6fd4db18660c307e73cbe63
+          created: 1749167141395
+          modified: 1749169595145
+          isPrivate: false
+          description: ""
+          sortKey: -1749168768199
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Nombre Producto 1",
+            	"descripcion":"Descripcion producto 1",
+            	"price": 23,
+            	"stock": 23,
+            	"category": {
+            		"id": 1,
+            		"name": "Electronics",
+            		"description": "Devices and gadgets"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_2dd56137362a476e8c161bd26c0cc1af
+          - id: pair_eec6d749b05d4fc4a3f7dc5eee63dd03
+            name: Authorization
+            value: "{{ _.token }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseUrl }}products/1"
+        name: Delete product
+        meta:
+          id: req_950fcb7cd5014bb9a6d2d614f789f602
+          created: 1749168723781
+          modified: 1749168897518
+          isPrivate: false
+          description: ""
+          sortKey: -1749168723781
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_ea4f64fe913548ccb1966982c7fb3189
+          - id: pair_feb475c08fff4833b8efc0451d7347e4
+            name: Authorization
+            value: "{{ _.token }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseUrl }}products/2"
+        name: Update product
+        meta:
+          id: req_2f1ee145cf58494f9dc459f435146950
+          created: 1749168768149
+          modified: 1749168926790
+          isPrivate: false
+          description: ""
+          sortKey: -1749168768149
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Nombre Producto 1",
+            	"descripcion":"Descripcion producto 1",
+            	"price": 23,
+            	"stock": 23,
+            	"category": {
+            		"id": 1,
+            		"name": "Electronics",
+            		"description": "Devices and gadgets"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_293bf74973e24886a0b55196126fd40f
+          - id: pair_aa856f1269fb4bafaab96c090dcf5e9f
+            name: Authorization
+            value: "{{ _.token }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: categories
+    meta:
+      id: fld_413dc3d7404f4e2fb69d2a64d03e9c11
+      created: 1749167737690
+      modified: 1749167756405
+      sortKey: -1749167737690
+      description: ""
+    children:
+      - url: "{{ _.baseUrl }}categories"
+        name: Create category
+        meta:
+          id: req_101e338cae4643878ffdebbeafef5752
+          created: 1749167742102
+          modified: 1749169548163
+          isPrivate: false
+          description: ""
+          sortKey: -1749167742102
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Electronics",
+              "description": "Devices and gadgets"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_88260d4d185446edb63dbb14fca4c58f
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_5831dd2733be4d2ba689b8b8c9ff5440
+          - id: pair_71857d4cb5c04f7ea271fb8ded8558a9
+            name: Authorization
+            value: "{{ _.token }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseUrl }}categories/1"
+        name: Delete category
+        meta:
+          id: req_fa98707ee4fa427bbddcee341bf814fb
+          created: 1749169484282
+          modified: 1749169490617
+          isPrivate: false
+          description: ""
+          sortKey: -1749167437699.5
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Electronics",
+              "description": "Devices and gadgets"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_88260d4d185446edb63dbb14fca4c58f
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_5831dd2733be4d2ba689b8b8c9ff5440
+          - id: pair_71857d4cb5c04f7ea271fb8ded8558a9
+            name: Authorization
+            value: "{{ _.token }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseUrl }}categories/1"
+        name: Update category
+        meta:
+          id: req_2133a88439b74fbd90eaf8e04af16b06
+          created: 1749169505223
+          modified: 1749169599393
+          isPrivate: false
+          description: ""
+          sortKey: -1749167589900.75
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Electronics",
+              "description": "Devices and gadgets"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_88260d4d185446edb63dbb14fca4c58f
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_5831dd2733be4d2ba689b8b8c9ff5440
+          - id: pair_71857d4cb5c04f7ea271fb8ded8558a9
+            name: Authorization
+            value: "{{ _.token }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseUrl }}categories"
+        name: Get all
+        meta:
+          id: req_7f46ad880e8b4c09975d76ad74833f4f
+          created: 1749169532869
+          modified: 1749169589025
+          isPrivate: false
+          description: ""
+          sortKey: -1749167742202
+        method: GET
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Electronics",
+              "description": "Devices and gadgets"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_88260d4d185446edb63dbb14fca4c58f
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_5831dd2733be4d2ba689b8b8c9ff5440
+          - id: pair_71857d4cb5c04f7ea271fb8ded8558a9
+            name: Authorization
+            value: "{{ _.token }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_afa52923623cecbd5ec61b1d8513e1c6d9747db6
+    created: 1749164245410
+    modified: 1749164245410
+environments:
+  name: desarrollo
+  meta:
+    id: env_afa52923623cecbd5ec61b1d8513e1c6d9747db6
+    created: 1749164245409
+    modified: 1749167406407
+    isPrivate: false
+  data:
+    token: Bearer
+      eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlci5hZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDkxNjczOTEsImV4cCI6MTc0OTE3MDk5MX0.gylX7gfglvTRqk4oolfcYl4OeCB3vbZh6O7dvLtYTBg
+    baseUrl: localhost:8080/
