@@ -19,7 +19,7 @@ collection:
         meta:
           id: req_9f41f56f66f14c35a5eeb05886e62d57
           created: 1749164245446
-          modified: 1749169591984
+          modified: 1749172604616
           isPrivate: false
           description: ""
           sortKey: -1749168768249
@@ -284,7 +284,7 @@ collection:
         meta:
           id: req_7f46ad880e8b4c09975d76ad74833f4f
           created: 1749169532869
-          modified: 1749169589025
+          modified: 1749172422826
           isPrivate: false
           description: ""
           sortKey: -1749167742202
@@ -316,6 +316,44 @@ collection:
             send: true
             store: true
           rebuildPath: true
+  - name: Auth
+    meta:
+      id: fld_8dc6e21cf20d4aa58b3d543f73f90b7c
+      created: 1749172439465
+      modified: 1749172439465
+      sortKey: -1749172439465
+      description: ""
+    children:
+      - url: "{{ _.baseUrl }}auth/login"
+        name: Login
+        meta:
+          id: req_2cf83a6304654acfafeeca0749f84ad8
+          created: 1749172442383
+          modified: 1749172547724
+          isPrivate: false
+          description: ""
+          sortKey: -1749172442383
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "dgutierrezc1@ucenfotec.ac.cr",
+            	"password": "david123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
@@ -327,9 +365,9 @@ environments:
   meta:
     id: env_afa52923623cecbd5ec61b1d8513e1c6d9747db6
     created: 1749164245409
-    modified: 1749167406407
+    modified: 1749172569554
     isPrivate: false
   data:
     token: Bearer
-      eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlci5hZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDkxNjczOTEsImV4cCI6MTc0OTE3MDk5MX0.gylX7gfglvTRqk4oolfcYl4OeCB3vbZh6O7dvLtYTBg
+      eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZ3V0aWVycmV6YzFAdWNlbmZvdGVjLmFjLmNyIiwiaWF0IjoxNzQ5MTcyNTQ4LCJleHAiOjE3NDkxNzYxNDh9.qwRKoyVT7pymRIn1hYRh62sFlOW6mFVBBSP6vdhoUfo
     baseUrl: localhost:8080/
