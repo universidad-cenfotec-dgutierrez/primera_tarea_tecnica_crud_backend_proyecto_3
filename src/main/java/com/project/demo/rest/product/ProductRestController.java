@@ -28,7 +28,9 @@ public class ProductRestController {
     @Autowired
     private CategoryRepository categoryRepository;
 
+
     @GetMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<?> getAllProducts(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "10") int size,
@@ -48,6 +50,7 @@ public class ProductRestController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<?> getProductById(@PathVariable Long id, HttpServletRequest request) {
         Optional<Product> product = productRepository.findById(id);
 

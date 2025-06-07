@@ -24,6 +24,7 @@ public class CategoryRestController {
     private CategoryRepository categoryRepository;
 
     @GetMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<?> getAllCategories(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "10") int size,
@@ -43,6 +44,7 @@ public class CategoryRestController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<?> getCategoryById(@PathVariable Long id, HttpServletRequest request) {
         Optional<Category> category = categoryRepository.findById(id);
 
